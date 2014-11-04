@@ -1,4 +1,7 @@
 class Order < ActiveRecord::Base
+  belongs_to :customer
+  has_one :note
+  
   validate :number, presence: true
   validates :number, uniqueness: true
 
